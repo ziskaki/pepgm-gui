@@ -1,0 +1,19 @@
+resources_dir: resources/
+data_dir: resources/SampleData/
+database_dir: resources/Database/
+results_dir: results/
+keys:
+  - APImail
+  - APIkey
+  - ExperimentName
+  - SampleName
+  - HostName
+  - ScientificHostName
+  - ReferenceDBName
+  - searchengines
+  - FilterSpectra
+  - psmFDR
+  - peptideFDR
+  - proteinFDR
+  - nTaxa
+  - nCores
