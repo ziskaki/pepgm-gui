@@ -1,6 +1,7 @@
 import logging
 import subprocess
-
+import webbrowser
+import threading
 import yaml
 from flask import Flask, render_template, request, send_file
 
@@ -146,5 +147,18 @@ def index():
     return render_template('index.html')
 
 
+def start_server():
+    app.run()  # Start the Flask development server
+
+
+def open_browser():
+    webbrowser.open('http://localhost:5000')  # Open the browser with the desired URL
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Start the Flask development server in a separate thread
+    server_thread = threading.Thread(target=start_server)
+    server_thread.start()
+
+    # Open the browser
+    open_browser()
