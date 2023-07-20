@@ -7,6 +7,8 @@ resources/Database/*
 .snakemake/*
 
 /resources/toyExample/spectra_PXD014913_cowpox_minimal_example.mgf
-/bin/
+/bin/*
 /resources/SampleData/spectrafile_PXD014913_cowpox_minimal_example.mgf
 !bin/.gitkeep
+
+.idea

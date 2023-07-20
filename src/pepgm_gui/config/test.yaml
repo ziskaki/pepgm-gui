@@ -1,0 +1,24 @@
+APIkey: ''
+APImail: ''
+AddHostandCrapToDB: false
+Alpha: [0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001,
+  0.8, 0.9, 1.0]
+DataDir: resources/SampleData
+DatabaseDir: resources/Database
+ExperimentName: ''
+FilterSpectra: true
+HostName: ''
+ParametersFile: /home/ziska/code/UIforPepGM/PepGM
+PeptideShaker: /home/ziska/code/UIforPepGM/PepGM
+ReferenceDBName: ''
+ResourcesDir: resources/
+SampleName: ''
+SamplePath: /home/ziska/code/UIforPepGM/PepGM
+ScientificHostName: ''
+SearchGUI: /home/ziska/code/UIforPepGM/PepGM
+TaxaInPlot: 15
+TaxidMapping: taxidMapping/
+peptideFDR: '5'
+proteinFDR: '5'
+psmFDR: '5'
+searchengines: '-'
