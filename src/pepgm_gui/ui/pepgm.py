@@ -5,11 +5,18 @@ import webbrowser
 
 import yaml
 from flask import Flask, render_template, request, send_file
-from pepgm_gui.ui.workers import *
+from ui.workers import *
 
 app = Flask(__name__)
 
 CONST_FILE = get_absolute_file_path("ui", "const.yaml")
+
+
+def load_config():
+    """Loads the configuration from the config.yaml file."""
+    with open(CONST_FILE, 'r') as config_file:
+        return yaml.safe_load(config_file)
+
 
 config = load_config()
 
@@ -19,11 +26,6 @@ DATABASE_DIR = f"{RESOURCES_DIR}Database/"
 RESULTS_DIR = config['results_dir']
 KEYS = config['keys']
 
-
-def load_config():
-    """Loads the configuration from the config.yaml file."""
-    with open(CONST_FILE, 'r') as config_file:
-        return yaml.safe_load(config_file)
 
 
 def extract_configs_from_request():
@@ -113,7 +115,7 @@ def run_snakemake():
         configs = yaml.safe_load(config_file)
 
     command = [
-        f"cd .. ; pwd ; snakemake --use-conda --conda-frontend conda --cores {configs['nCores']}"
+        f"pwd ; snakemake --use-conda --conda-frontend conda --cores {configs['nCores']}"
     ]
     subprocess.run(command, shell=True)
     return "Pipeline executed!"
