@@ -1,6 +1,5 @@
 import argparse
 
-from FactorGraphGeneration import *
 from belief_propagation import *
 
 parser = argparse.ArgumentParser(description='Run the PepGM algorithm from command line')
