@@ -1,20 +1,15 @@
 import logging
 import subprocess
-import webbrowser
 import threading
+import webbrowser
+
 import yaml
 from flask import Flask, render_template, request, send_file
-
-from workers import *
+from pepgm_gui.ui.workers import *
 
 app = Flask(__name__)
 
-
-def load_config():
-    """Loads the configuration from the config.yaml file."""
-    with open('const.yaml', 'r') as config_file:
-        return yaml.safe_load(config_file)
-
+CONST_FILE = get_absolute_file_path("ui", "const.yaml")
 
 config = load_config()
 
@@ -23,6 +18,12 @@ DATA_DIR = f"{RESOURCES_DIR}SampleData/"
 DATABASE_DIR = f"{RESOURCES_DIR}Database/"
 RESULTS_DIR = config['results_dir']
 KEYS = config['keys']
+
+
+def load_config():
+    """Loads the configuration from the config.yaml file."""
+    with open(CONST_FILE, 'r') as config_file:
+        return yaml.safe_load(config_file)
 
 
 def extract_configs_from_request():
