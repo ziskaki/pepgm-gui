@@ -1,5 +1,5 @@
 ## About
-The `pepgm-gui` is a web-based user interface that lets you create and modify configuration files, and run PepGM's
+The `pepgm-gui` is a web-based user interface for Linux/MaxOS machines that lets you create and modify configuration files, and run PepGM's
 Snakemake workflow.
 
 ## Prerequisites
@@ -24,7 +24,7 @@ Update your conda environment to include the additional packages:
 ## Usage
 To start the user interface:
 
-`python3 ui.py`
+`./launch_ui`
 
 
 
